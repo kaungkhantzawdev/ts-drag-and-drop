@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-</head>
-<body>
-
-    <section class="container">
-        <h3 class="text-center my-3">Add Project</h3>
-        <template id="projectInput" class="row align-items-center justify-content-center">
-            <form class="col-12 col-lg-7">
-                <div class="mb-3">
-                    <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description</label>
-                    <input type="text" class="form-control" id="description" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="people" class="form-label">Pepple</label>
-                    <input type="text" class="form-control" id="people" aria-describedby="emailHelp">
-                </div>
-                <button type="submit" class="btn btn-primary btn-lg w-100  mb-5">Add New</button>
-            </form>
-        </template>
-    </section>
-    <section class="container">
-        <template id="projectList" class="row align-items-center justify-content-center">
-            <section class="mb-5 col-12 col-lg-7">
-                <div class="border border-primary rounded">
-                    <header>
-                        <h2 class="bg-primary text-white p-3 text-center rounded-top"></h2>
-                    </header>
-                    <ul class="list-group list-group-flush"></ul>
-                </div>
-            </section>
-        </template>
-        <div id="app" class="row justify-content-center"></div>
-
-    </section>
-    <script src="./dist/app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ProjectManager</title>
+    <link rel="stylesheet" href="app.css" />
+    <script src="dist/app.js" defer></script>
+  </head>
+  <body>
+    <template id="project-input">
+      <form>
+        <div class="form-control">
+          <label for="title">Title</label>
+          <input type="text" id="title" />
+        </div>
+        <div class="form-control">
+          <label for="description">Description</label>
+          <textarea id="description" rows="3"></textarea>
+        </div>
+        <div class="form-control">
+          <label for="people">People</label>
+          <input type="number" id="people" step="1" min="0" max="10" />
+        </div>
+        <button type="submit">ADD PROJECT</button>
+      </form>
+    </template>
+    <template id="single-project">
+      <li draggable="true">
+        <h2></h2>
+        <h3></h3>
+        <p></p>
+      </li>
+    </template>
+    <template id="project-list">
+      <section class="projects">
+        <header>
+          <h2></h2>
+        </header>
+        <ul></ul>
+      </section>
+    </template>
+    <div id="app"></div>
+  </body>
 </html>
